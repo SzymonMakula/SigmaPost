@@ -14,10 +14,10 @@ import {
 const ResponseGeneralColumn = styled(FlexColumn)`
   width: 100%;
   height: auto;
-  min-height: 192px;
-  overflow-x: auto;
+  min-height: ${({ extended }) => (extended ? '192px' : 'auto')};
+  overflow-x: ${({ extended }) => (extended ? 'auto' : '')};
   border-bottom: 2px ${({ theme: { color } }) => color.lightGrey} solid;
-  box-sizing: content-box;
+  box-sizing: border-box;
   padding: 20px;
 `;
 
@@ -64,7 +64,7 @@ export default function ResponseGeneral({
   const statusColor = useMemo(() => statusToColor(status), [status]);
   const { config } = useConfig();
   return (
-    <ResponseGeneralColumn>
+    <ResponseGeneralColumn extended={config.extendedGeneral}>
       <ResponseGeneralRow>
         <ResponseTextDescription>Status</ResponseTextDescription>
         <StatusIcon statusColor={statusColor} />

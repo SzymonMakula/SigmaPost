@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { existsSync, writeFileSync } from 'fs';
 /* eslint global-require: off, no-console: off, promise/always-return: off */
 
 /**
@@ -16,7 +16,6 @@ import { app, BrowserWindow, shell, ipcMain, dialog } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import axios from 'axios';
-import { DataNode } from 'domhandler';
 import MenuBuilder from './menu';
 import packResponseToString, { resolveHtmlPath } from './util';
 import Config from './config/config';

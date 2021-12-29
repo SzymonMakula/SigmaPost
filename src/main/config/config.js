@@ -5,7 +5,7 @@ const defaultSettings = {
   rawResponse: false,
   autoHeaders: true,
   renderHtml: false,
-  extendedGeneral: false,
+  extendedGeneral: true,
 };
 
 class Config {
